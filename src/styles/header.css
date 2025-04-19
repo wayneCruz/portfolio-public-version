@@ -1,0 +1,240 @@
+.header-container{
+  display: flex;
+  justify-content: center;
+  font-family: "Rubik", sans-serif;
+  justify-items: center;
+  position: relative;
+  z-index: 200;
+  height: 100vh;
+}
+
+.greetings-section {
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+}
+
+@media only screen and (min-width: 771px) {
+  .greetings-section {
+    width: 80%;
+    grid-template-columns: 1fr 35%;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .greetings-section {
+    grid-template-rows: 45% 30%;
+    width: 90%;
+    align-items: end;
+  }
+
+  .header-container {
+    margin-bottom: 100px;
+  }
+}
+
+.greeting-container,
+.vector {
+  opacity: 0;
+  animation-name: header;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-duration: 0.4s;
+  animation-delay: 0.2s;
+}
+
+@keyframes header {
+  0% {
+    transform: translateY(5rem);
+  } 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vector {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.vector img{
+  border-radius: 50%;
+  object-fit: cover;
+  width: 14.375rem;
+  height: 14.375rem;
+  background-color: #468e64;
+}
+
+@media screen and (max-width: 780px) {
+  .greeting-container .hello-text {
+    font-size: 1.8rem;
+    margin: 6rem 0;
+  }
+
+  .greeting-container .hello-text::after {
+    width: 11.875rem;
+    top: 4.85rem;
+  }
+
+  .greetings-section {
+    margin-top: 2.5rem;
+  }
+
+  .greeting-container .hello-text span{
+    position: absolute;
+    top: 2rem;
+    left: 0rem;
+    max-width: 150px;
+  }
+}
+
+@media screen and (min-width: 781px) {
+  .greeting-container .hello-text {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+  }
+
+  .greeting-container .hello-text::after {
+    width: 20.875rem;
+    top: 1.65rem;
+  }
+}
+
+.greeting-container .hello-text {
+  font-weight: 500;
+  color: #31473A;
+  position: relative;
+}
+
+.greeting-container .hello-text::after {
+  content: '';
+  position: absolute;
+  left: 0.3125rem;
+  height: 1.375rem;
+  opacity: 0.1;
+  border-radius: 5px;
+  filter: blur(3px);
+  background-color:  #31473A;
+  z-index: -1;
+}
+
+.header-intro {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: rgb(118, 113, 113);
+}
+
+.header-intro span{
+  color: #31473A;;
+  font-weight: 500;
+}
+
+.off-screen-menu{
+  font-family: "Sour Gummy", sans-serif;
+  position: fixed;
+  background-color: #31473A;
+  height: 100%;
+  width: 100%;
+  top: -100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  transition: .3s ease;
+  z-index: 150;
+}
+
+/* .off-screen-menu.active{
+  top: 0;
+} */
+
+.ham-menu-container{
+  padding: 1rem;
+  display: flex;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 200;
+}
+
+.ham-menu{
+  height: 34px;
+  width: 30px;
+  margin-left: auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.ham-menu span{
+  height: 4px;
+  width: 100%;
+  background-color: #31473A;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+  top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+  top: 75%;
+}
+
+.menu-options{
+  cursor: pointer;
+  list-style-type: none;
+  font-size: 30px;
+  line-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.option:link {
+  color: rgb(227, 224, 224);
+  text-decoration: none;
+}
+
+.option:visited {
+  color: rgb(227, 224, 224);
+}
+
+.option:hover {
+  color: rgb(227, 224, 224);
+}
+
+.option:active {
+  color: rgb(227, 224, 224);
+}
+
+.scroll-down-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  position: absolute;
+  bottom: 1.5rem;
+  z-index: 100;
+  animation-name: down-arrow;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes down-arrow {
+  from{
+    transform: translateY(5px)
+  }to {
+    transform: translateY(0)
+  }
+}

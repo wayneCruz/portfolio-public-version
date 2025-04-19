@@ -1,0 +1,395 @@
+.about-me-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Rubik", sans-serif;
+  font-size: 50px;
+  width: 100%;
+  overflow: hidden;
+  color: #31473A;
+  margin-bottom: 100px;
+}
+
+.about-me-intro{
+  font-size: 18px;
+  display: grid;
+  grid-template-columns: 1fr 40%;
+  margin-bottom: 20px;
+  align-items: center;
+  text-align: justify;
+  gap: 3rem;
+  margin-bottom: 50px;
+  height: auto;
+  justify-items: center;
+}
+
+.about-animation {
+  animation-name: title-container;
+  animation-timing-function: ease-in;
+  animation-duration: 0.7s;
+}
+
+@media only screen and (max-width: 770px) {
+  .about-me-intro {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .toolkit-container {
+    grid-template-columns: 1fr;
+    height: 500px;
+  }
+
+  .card {
+    width: 200px;
+    height: 200px;
+  }
+
+  .card-last img{
+    width: 50px;
+    height: 50px;
+  }
+
+  .tooltip {
+    top: 380px;
+    left: 0;
+  }
+
+  .brief-case {
+    width: 60px;
+  }
+
+  .brief-case-container {
+    width: 70%;
+    left: 170px;
+    top: -170px;
+  }
+}
+
+@media only screen and (min-width: 771px) {
+  .card {
+    width: 300px;
+    height: 300px;
+  }
+
+  .about-me-intro {
+    width: 80%;
+  }
+
+  .toolkit-container {
+    grid-template-columns: 1fr 1fr;
+    height: 600px;
+  }  
+
+  .card-last img{
+    width: 70px;
+    height: 70px;
+  }
+
+  .tooltip {
+    top: 250px;
+    left: 500px;
+  }
+
+  .brief-case {
+    width: 80px;
+  }
+
+  .brief-case-container {
+    top: -200px;
+    left: 200px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 772px) {
+  .tooltip {
+    top: 250px;
+    left: 320px;
+  }
+}
+
+.about-text{
+  margin: 1rem 0;
+  line-height: 1.8rem;
+  color: rgb(118, 113, 113);
+}
+
+.about-title{
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #48574f;
+  position: relative;
+}
+
+.about-title::after {
+  content: '';
+  position: absolute;
+  left: 0.3125rem;
+  top: 1.2rem;
+  width: 11.2rem;
+  height: 1.375rem;
+  opacity: 0.1;
+  border-radius: 5px;
+  filter: blur(3px);
+  background-color:  #31473A;
+  z-index: -1;
+}
+
+.about-me-image{
+  transition: all 1.5s;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+}
+
+.about-me-image img{
+  width: 100%;
+  object-fit: contain;
+  border-radius: 0.7rem;
+}
+
+.about-visible{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toolkit-title {
+  width: 100%;
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #31473A;
+  margin: 1rem 0;
+  font-family: "Sour Gummy", sans-serif;
+}
+
+.toolkit-title-container {
+  display: flex;
+  min-width: 350px;
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+}
+
+@keyframes title-container {
+  from {
+    transform: translateY(300px);
+    opacity: 0;
+  }to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toolkit-container{
+  font-size: 50px;
+  width: 80%;
+  display: grid;
+  position: relative;
+  transition: all 1.5s;
+  margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.toolkit-animation {
+  animation-name: title-container;
+  animation-timing-function: linear;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+} 
+
+.tooltip{
+  text-shadow: 0 0 5px white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-weight: 500;
+  z-index: 100;
+  animation: tooltip infinite 0.5s alternate linear both;
+  transition: all 0.15s;
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+  font-family: "Sour Gummy", sans-serif;
+}
+
+.toolkit-hide{
+  opacity: 0;
+}
+
+.tooltip img{
+  width: 20px;
+  filter: drop-shadow(0 0 5px white)
+}
+
+@keyframes tooltip{
+  from{
+    transform: translateX(-20px); 
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+
+.cards-container {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card img{
+  width: 80%;
+  border-radius: 25px;
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* top: 50px; */
+  transition: all 0.4s ease-in-out; 
+  box-shadow: inset 0px 0px 20px 0px rgba(4, 4, 4, 0.2);
+}
+
+.card1{
+  background-color: #334353;
+}
+
+.card2{
+  background-color: #F0DB4F;
+}
+
+.card3{
+  background-color: #2c46ab;
+}
+
+.card4{
+  background-color: #f08050;
+}
+
+.card5{
+  background-color: rgb(106, 69, 165)
+}
+
+.card6{
+  background-color: #f8a829;
+
+}
+
+.card-last{
+  width: 90%;
+  height: 100%;
+  transition: all 0.75s;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-family: "Sour Gummy", sans-serif;
+  row-gap: 20px;
+  text-align: center;
+  animation-name: card-last;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes card-last {
+  from {
+    opacity: 0;
+    /* transform: scale(0.1); */
+  }to {
+    opacity: 1;
+    /* transform: scale(1); */
+  }
+}
+
+.card-last img{
+  /* width: 70px;
+  height: 70px; */
+}
+
+.card-last .icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 16px;
+  row-gap: 15px;
+}
+
+.visible-last-card{
+  opacity: 1;
+}
+
+.away {
+  transform-origin: bottom right;
+}
+
+.brief-case-container {
+  position: relative;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  z-index: 50;
+}
+
+.brief-case{
+  position: absolute;
+}
+
+/* .brief-case-animation {
+  animation-name: brief-case;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1.8s;
+} */
+
+@keyframes brief-case {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.brief-case-grow-animate{
+  animation-name: brief-case-grow;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.2s;
+}
+
+@keyframes brief-case-grow {
+  0% {
+    transform: scale(1);
+  }50% {
+    transform: scale(1.2)
+  }100%{
+    transform: scale(1)
+  }
+}

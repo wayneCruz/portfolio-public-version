@@ -1,0 +1,8 @@
+body{
+  margin: 0;
+  padding-bottom: 50px;
+  font-family: "Sour Gummy", sans-serif;
+  background-color: #EDF4F2;
+  position: relative;
+  min-width: 300px;
+}
